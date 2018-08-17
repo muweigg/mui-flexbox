@@ -47,8 +47,6 @@
 	$column-offset-index: ();
 	$columns: get-columns($columns);
 
-	@debug $columns;
-
 	@each $column in $columns {
 		@for $i from 1 through $column {
 			$calc-width: 100% / $column * $i;
