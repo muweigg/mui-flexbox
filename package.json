@@ -1,0 +1,30 @@
+{
+  "name": "mui-flexbox",
+  "version": "0.0.1",
+  "description": "flexbox framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flexbox",
+    "scss"
+  ],
+  "author": "MuWei",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.1.1",
+    "browser-sync": "^2.24.6",
+    "cssnano": "^4.0.5",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.1",
+    "normalize.css": "^8.0.0",
+    "postcss-import": "^12.0.0"
+  },
+  "dependencies": {
+    "gulp-rename": "^1.4.0"
+  }
+}

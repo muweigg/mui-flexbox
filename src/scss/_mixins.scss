@@ -1,0 +1,199 @@
+@import 'variables';
+@import 'functions';
+
+@mixin generate-base () {
+	.row {
+	    box-sizing: border-box;
+		margin-left: -$column-gap;
+		margin-right: -$column-gap;
+
+		@if not($float-layout) {
+			display: flex;
+			flex-wrap: wrap;
+
+		    .col {
+		    	flex: 1 0 auto;
+		    	max-width: 100%;
+		    }
+		}
+
+		.col, [class*='col-'] {
+			@if $float-layout {
+				float: left;
+			}
+		    box-sizing: border-box;
+			padding-left: $column-gap;
+			padding-right: $column-gap;
+		}
+
+		&.gapless {
+			margin-left: 0;
+			margin-right: 0;
+
+			.col, [class*='col-'] {
+				padding: 0;
+			}
+		}
+
+		@if $float-layout {
+			@include clearfix;
+		}
+	}
+}
+
+@mixin generate-columns ($breakpoint: null) {
+
+	$column-width-index: ();
+	$column-offset-index: ();
+
+	@each $column in $columns {
+		@for $i from 1 through $column {
+			$calc-width: 100% / $column * $i;
+			$column-width-index: map-set($column-width-index, #{$calc-width}, ());
+			$column-offset-index: map-set($column-offset-index, #{$calc-width}, ());
+		}
+	}
+
+	@each $column in $columns {
+		@for $i from 1 through $column {
+			$calc-width: 100% / $column * $i;
+			$is-exist: map-has-key($column-width-index, #{$calc-width});
+			@if $is-exist {
+				$class-name: get-class-name(#{$i}-#{$column}, $breakpoint);
+				$offset-name: get-class-name(#{$i}-#{$column}, $breakpoint, true);
+				$column-width-index: update-list-in-map($column-width-index, #{$calc-width}, $class-name);
+				$column-offset-index: update-list-in-map($column-offset-index, #{$calc-width}, $offset-name);
+			} @else {}
+		}
+	}
+
+	$column-width-index: update-list-in-map($column-width-index, 100%, get-class-name(1, $breakpoint));
+
+	@each $width, $classes in $column-width-index {
+		#{join($classes, (), comma)} {
+			@if not($float-layout) {
+				flex-basis: #{$width};
+			} @else {
+				width: #{$width};
+			}
+			max-width: #{$width};
+		}
+	}
+
+	@each $width, $classes in $column-offset-index {
+		#{join($classes, (), comma)} {
+			margin-left: #{$width};
+		}
+	}
+}
+
+@mixin generate-visibility ($breakpoint: null) {
+	@if $breakpoint {
+		$breakpoint: -#{$breakpoint};
+	}
+
+    [hidden#{$breakpoint}], .hidden#{$breakpoint} {
+        display: none !important;
+    }
+
+    [visible#{$breakpoint}], .visible#{$breakpoint} {
+        display: block !important;
+    }
+}
+
+@mixin generate-align ($breakpoint: null) {
+	@if $breakpoint {
+		$breakpoint: -#{$breakpoint};
+	}
+
+	.ta-l#{$breakpoint} {
+		text-align: left;
+		@if not($float-layout) {
+			text-align: start;
+		}
+	}
+
+	.ta-c#{$breakpoint} { text-align: center; }
+
+	.ta-r#{$breakpoint} {
+		text-align: right;
+		@if not($float-layout) {
+			text-align: end;
+		}
+	}
+
+	@if not($float-layout) {
+
+		$classes: (
+			align-content: (
+				ac-fs: flex-start,
+				ac-fe: flex-end,
+				ac-c:  center,
+				ac-s:  stretch,
+				ac-sa: space-around,
+				ac-sb: space-between
+			),
+			align-items: (
+				ai-fs: flex-start,
+				ai-fe: flex-end,
+				ai-c:  center,
+				ai-s:  stretch,
+				ai-b:  baseline,
+			),
+			align-self: (
+				as-a:  auto,
+				as-fs: flex-start,
+				as-fe: flex-end,
+				as-c:  center,
+				as-s:  stretch,
+				as-b:  baseline,
+			),
+			justify-content: (
+				jc-fs: flex-start,
+				jc-fe: flex-end,
+				jc-c:  center,
+				jc-sa: space-around,
+				jc-sb: space-between,
+				jc-se: space-evenly,
+			),
+		);
+
+		@each $property, $map in $classes {
+			@each $key, $value in $map {
+				.#{$key}#{$breakpoint} {
+					#{$property}: #{$value};
+				}
+			}
+		}
+	}
+}
+
+@mixin breakpoint-up ($breakpoint) {
+	$breakpoint: get-breakpoint($breakpoint);
+	@media (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down ($breakpoint) {
+	$breakpoint: get-breakpoint($breakpoint) - 0.001;
+	@media (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin breakpoint-between ($begin, $end) {
+	$begin: get-breakpoint($begin);
+	$end: get-breakpoint($end) - 0.001;
+	@media (min-width: $begin) and (max-width: $end) {
+		@content;
+	}
+}
+
+@mixin clearfix() {
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}

@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'mixins';
+
+@each $breakpoint, $width in $breakpoints {
+	@include breakpoint-up ($breakpoint) {
+		@include generate-columns($breakpoint);
+        @include generate-visibility($breakpoint);
+        @include generate-align($breakpoint);
+	};
+}

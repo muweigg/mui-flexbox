@@ -1,0 +1,31 @@
+@import 'variables';
+
+@function map-set ($map, $key, $value) {
+	$new: ($key: $value);
+	@return map-merge($map, $new);
+}
+
+@function update-list-in-map ($map, $key, $value) {
+	$list: map-get($map, #{$key});
+	$list: append($list, $value);
+	@return map-set($map, #{$key}, $list);
+}
+
+@function get-class-name ($name, $breakpoint: null, $offset: false) {
+	@if $breakpoint {
+		$breakpoint: #{$breakpoint}-;
+	}
+	$class-name: '.#{$prefix}#{$breakpoint}#{$name}';
+	@if $offset {
+		$class-name: '.#{$prefix}offset-#{$breakpoint}#{$name}';
+	}
+	@return $class-name;
+}
+
+@function get-breakpoint ($breakpoint) {
+	$breakpoint-value: map-get($breakpoints, $breakpoint);
+	@if $breakpoint-value {
+		$breakpoint: $breakpoint-value;
+	}
+	@return $breakpoint;
+}
