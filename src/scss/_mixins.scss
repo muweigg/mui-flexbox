@@ -45,24 +45,27 @@
 
 	$column-width-index: ();
 	$column-offset-index: ();
+	$columns: get-columns($columns);
+
+	@debug $columns;
 
 	@each $column in $columns {
 		@for $i from 1 through $column {
 			$calc-width: 100% / $column * $i;
-			$column-width-index: map-set($column-width-index, #{$calc-width}, ());
-			$column-offset-index: map-set($column-offset-index, #{$calc-width}, ());
+			$column-width-index: map-set($column-width-index, $calc-width, ());
+			$column-offset-index: map-set($column-offset-index, $calc-width, ());
 		}
 	}
 
 	@each $column in $columns {
 		@for $i from 1 through $column {
 			$calc-width: 100% / $column * $i;
-			$is-exist: map-has-key($column-width-index, #{$calc-width});
+			$is-exist: map-has-key($column-width-index, $calc-width);
 			@if $is-exist {
 				$class-name: get-class-name(#{$i}-#{$column}, $breakpoint);
 				$offset-name: get-class-name(#{$i}-#{$column}, $breakpoint, true);
-				$column-width-index: update-list-in-map($column-width-index, #{$calc-width}, $class-name);
-				$column-offset-index: update-list-in-map($column-offset-index, #{$calc-width}, $offset-name);
+				$column-width-index: update-list-in-map($column-width-index, $calc-width, $class-name);
+				$column-offset-index: update-list-in-map($column-offset-index, $calc-width, $offset-name);
 			} @else {}
 		}
 	}
