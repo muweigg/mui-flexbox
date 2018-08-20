@@ -2,5 +2,6 @@
 
 @include generate-base;
 @include generate-columns;
-@include generate-visibility;
+@include generate-display;
 @include generate-align;
+@include generate-visibility;

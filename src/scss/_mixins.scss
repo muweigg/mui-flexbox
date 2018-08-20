@@ -39,6 +39,66 @@
 			@include clearfix;
 		}
 	}
+
+	@if $float-layout {
+		.ta-j {
+			text-align: justify;
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 100%;
+				height: 0;
+				min-height: 0;
+				line-height: 0;
+				overflow: hidden;
+			}
+		}
+		
+		.ta-j-fix {
+			margin: 0 !important;
+			padding: 0 !important;
+			height: 0 !important;
+			min-height: 0 !important;
+			line-height: 0 !important;
+			display: inline-block !important;
+		}
+	}
+}
+
+@mixin generate-display ($breakpoint: null) {
+	@if $breakpoint {
+		$breakpoint: -#{$breakpoint};
+	}
+
+	$classes: ();
+
+	@if $float-layout {
+		$classes: (
+			display: (
+				d-i:  inline,
+				d-ib: inline-block,
+				d-b:  block,
+			)
+		);
+	} @else {
+		$classes: (
+			display: (
+				d-f:  flex,
+				d-if: inline-flex,
+				d-i:  inline,
+				d-ib: inline-block,
+				d-b:  block,
+			)
+		);
+	}
+
+	@each $property, $map in $classes {
+		@each $key, $value in $map {
+			.#{$key}#{$breakpoint} {
+				#{$property}: #{$value};
+			}
+		}
+	}
 }
 
 @mixin generate-columns ($breakpoint: null) {
@@ -123,16 +183,35 @@
 		}
 	}
 
+	$classes: ();
+
 	@if not($float-layout) {
 
 		$classes: (
+			flex: (
+				fx-auto: 1,
+				fx-g: 1 0 auto,
+				fx-s: 0 1 auto,
+				fx-none: 0 0 auto,
+			),
+			flex-direction: (
+				fxd-c: column,
+				fxd-cr: column-reverse,
+				fxd-r: row,
+				fxd-rr: row-reverse,
+			),
+			flex-wrap: (
+				fxw-c: wrap,
+				fxw-n: nowrap,
+				fxw-wr: wrap-reverse,
+			),
 			align-content: (
 				ac-fs: flex-start,
 				ac-fe: flex-end,
 				ac-c:  center,
 				ac-s:  stretch,
 				ac-sa: space-around,
-				ac-sb: space-between
+				ac-sb: space-between,
 			),
 			align-items: (
 				ai-fs: flex-start,
@@ -158,12 +237,12 @@
 				jc-se: space-evenly,
 			),
 		);
+	}
 
-		@each $property, $map in $classes {
-			@each $key, $value in $map {
-				.#{$key}#{$breakpoint} {
-					#{$property}: #{$value};
-				}
+	@each $property, $map in $classes {
+		@each $key, $value in $map {
+			.#{$key}#{$breakpoint} {
+				#{$property}: #{$value};
 			}
 		}
 	}
