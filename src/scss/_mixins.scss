@@ -10,14 +10,9 @@
 		@if not($float-layout) {
 			display: flex;
 			flex-wrap: wrap;
-
-		    .col {
-		    	flex: 1 0 auto;
-		    	max-width: 100%;
-		    }
 		}
 
-		.col, [class*='col-'] {
+		[class*='col-'] {
 			@if $float-layout {
 				float: left;
 			}
