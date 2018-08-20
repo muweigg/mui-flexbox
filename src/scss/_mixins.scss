@@ -141,9 +141,13 @@
 		}
 	}
 
-	@each $width, $classes in $column-offset-index {
-		#{join($classes, (), comma)} {
-			margin-left: #{$width};
+	@if $column-offset {
+		@each $width, $classes in $column-offset-index {
+			@if $width != 100% {
+				#{join($classes, (), comma)} {
+					margin-left: #{$width};
+				}
+			}
 		}
 	}
 }
