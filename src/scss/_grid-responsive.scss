@@ -3,6 +3,7 @@
 
 @each $breakpoint, $width in $breakpoints {
 	@include breakpoint-up ($breakpoint) {
+		@include generate-gap($breakpoint);
 		@include generate-columns($breakpoint);
 		// @include generate-display($breakpoint);
 		// @include generate-position($breakpoint);

@@ -6,23 +6,22 @@
 }
 
 @function update-list-in-map ($map, $key, $value) {
-	$list: map-get($map, $key);
-	$list: append($list, $value);
+	$list: append(map-get($map, $key), $value);
 	@return map-set($map, $key, $list);
 }
 
 @function get-columns ($columns) {
 	$unique-index: ();
-	$columns-list: ();
+	$columns-new: ();
 	@each $column in $columns {
 		@for $i from 1 through $column {
 			@if $column % $i == 0 and not(map-has-key($unique-index , $i)) {
 				$unique-index: map-set($unique-index, $i, true);
-				$columns-list: append($columns-list, $i);
+				$columns-new: append($columns-new, $i);
 			}
 		}
 	}
-	@return $columns-list;
+	@return $columns-new;
 }
 
 @function get-class-name ($name, $breakpoint: null, $offset: false) {

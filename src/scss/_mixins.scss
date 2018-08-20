@@ -1,11 +1,9 @@
 @import 'variables';
 @import 'functions';
 
-@mixin generate-base () {
+@mixin generate-base ($breakpoint: null) {
 	.row {
 	    box-sizing: border-box;
-		margin-left: -$column-gap;
-		margin-right: -$column-gap;
 
 		@if not($float-layout) {
 			display: flex;
@@ -17,17 +15,6 @@
 				float: left;
 			}
 		    box-sizing: border-box;
-			padding-left: $column-gap;
-			padding-right: $column-gap;
-		}
-
-		&.gapless {
-			margin-left: 0;
-			margin-right: 0;
-
-			.col, [class*='col-'] {
-				padding: 0;
-			}
 		}
 
 		@if $float-layout {
@@ -61,6 +48,38 @@
 	}
 }
 
+@mixin generate-gap ($breakpoint: null) {
+	$gap: map-get($breakpoints-gap, $breakpoint);
+
+	@if not($gap) {
+		$gap: map-get($breakpoints-gap, default);
+	}
+
+	@if $breakpoint {
+		$breakpoint: -#{$breakpoint};
+	}
+
+	.row {
+		margin-left: -$gap;
+		margin-right: -$gap;
+
+		[class*='col-'] {
+			padding-left: $gap;
+			padding-right: $gap;
+		}
+
+		&.gapless#{$breakpoint} {
+			margin-left: 0;
+			margin-right: 0;
+
+			[class*='col-'] {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
 @mixin generate-position ($breakpoint: null) {
 	@if $breakpoint {
 		$breakpoint: -#{$breakpoint};
@@ -89,26 +108,19 @@
 		$breakpoint: -#{$breakpoint};
 	}
 
-	$classes: ();
+	$classes: (
+		display: (
+			d-i:  inline,
+			d-ib: inline-block,
+			d-b:  block,
+		)
+	);
 
-	@if $float-layout {
-		$classes: (
-			display: (
-				d-i:  inline,
-				d-ib: inline-block,
-				d-b:  block,
-			)
-		);
-	} @else {
-		$classes: (
-			display: (
-				d-f:  flex,
-				d-if: inline-flex,
-				d-i:  inline,
-				d-ib: inline-block,
-				d-b:  block,
-			)
-		);
+	@if not($float-layout) {
+		$display-map: map-get($classes, display);
+		$display-map: map-set($display-map, d-f, flex);
+		$display-map: map-set($display-map, d-if, inline-flex);
+		$classes: map-set($classes, display, $display-map);
 	}
 
 	@each $property, $map in $classes {
@@ -161,11 +173,10 @@
 	}
 
 	@if $column-offset {
+		$column-offset-index: map-remove($column-offset-index, 100%);
 		@each $width, $classes in $column-offset-index {
-			@if $width != 100% {
-				#{join($classes, (), comma)} {
-					margin-left: #{$width};
-				}
+			#{join($classes, (), comma)} {
+				margin-left: #{$width};
 			}
 		}
 	}

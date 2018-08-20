@@ -1,6 +1,7 @@
 @import 'mixins';
 
 @include generate-base;
+@include generate-gap;
 @include generate-columns;
 @include generate-display;
 @include generate-position;
