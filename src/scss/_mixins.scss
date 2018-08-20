@@ -61,6 +61,29 @@
 	}
 }
 
+@mixin generate-position ($breakpoint: null) {
+	@if $breakpoint {
+		$breakpoint: -#{$breakpoint};
+	}
+
+	$classes: (
+		position: (
+			pos-s: static,
+			pos-a: absolute,
+			pos-r: relative,
+			pos-f: fixed,
+		)
+	);
+
+	@each $property, $map in $classes {
+		@each $key, $value in $map {
+			.#{$key}#{$breakpoint} {
+				#{$property}: #{$value};
+			}
+		}
+	}
+}
+
 @mixin generate-display ($breakpoint: null) {
 	@if $breakpoint {
 		$breakpoint: -#{$breakpoint};
