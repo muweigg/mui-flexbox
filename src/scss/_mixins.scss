@@ -1,8 +1,9 @@
 @import 'variables';
 @import 'functions';
 
-@mixin generate-base ($breakpoint: null) {
-	.row {
+@mixin generate-base () {
+
+	#{get-selectors-by-name(row)} {
 	    box-sizing: border-box;
 
 		@if not($float-layout) {
@@ -23,7 +24,7 @@
 	}
 
 	@if $float-layout {
-		.ta-j {
+		#{get-selectors-by-name(ta-j)} {
 			text-align: justify;
 			&:after {
 				content: '';
@@ -36,7 +37,7 @@
 			}
 		}
 		
-		.ta-j-fix {
+		#{get-selectors-by-name(ta-j-fix)} {
 			margin-top: 0 !important;
 			margin-bottom: 0 !important;
 			padding: 0 !important;
@@ -49,29 +50,23 @@
 }
 
 @mixin generate-gap ($breakpoint: null) {
+
 	$gap: map-get($breakpoints-gap, $breakpoint);
 
 	@if not($gap) {
 		$gap: map-get($breakpoints-gap, default);
 	}
 
-	@if $breakpoint {
-		$breakpoint: -#{$breakpoint};
-	}
-
-	.row {
+	#{get-selectors-by-name(row)} {
 		margin-left: -$gap;
 		margin-right: -$gap;
-
 		[class*='col-'] {
 			padding-left: $gap;
 			padding-right: $gap;
 		}
-
-		&.gapless#{$breakpoint} {
+		#{get-selectors-by-name('&gapless')} {
 			margin-left: 0;
 			margin-right: 0;
-
 			[class*='col-'] {
 				padding-left: 0;
 				padding-right: 0;
@@ -81,9 +76,6 @@
 }
 
 @mixin generate-position ($breakpoint: null) {
-	@if $breakpoint {
-		$breakpoint: -#{$breakpoint};
-	}
 
 	$classes: (
 		position: (
@@ -94,19 +86,10 @@
 		)
 	);
 
-	@each $property, $map in $classes {
-		@each $key, $value in $map {
-			.#{$key}#{$breakpoint} {
-				#{$property}: #{$value};
-			}
-		}
-	}
+	@include generate-selectors-by-map($classes, $breakpoint);
 }
 
 @mixin generate-display ($breakpoint: null) {
-	@if $breakpoint {
-		$breakpoint: -#{$breakpoint};
-	}
 
 	$classes: (
 		display: (
@@ -123,13 +106,7 @@
 		$classes: map-set($classes, display, $display-map);
 	}
 
-	@each $property, $map in $classes {
-		@each $key, $value in $map {
-			.#{$key}#{$breakpoint} {
-				#{$property}: #{$value};
-			}
-		}
-	}
+	@include generate-selectors-by-map($classes, $breakpoint);
 }
 
 @mixin generate-columns ($breakpoint: null) {
@@ -151,16 +128,16 @@
 			$calc-width: 100% / $column * $i;
 			$is-exist: map-has-key($column-width-index, $calc-width);
 			@if $is-exist {
-				$class-name: get-class-name(#{$i}-#{$column}, $breakpoint);
-				$offset-name: get-class-name(#{$i}-#{$column}, $breakpoint, true);
+				$class-name: get-column-selectors(#{$i}-#{$column}, $breakpoint);
+				$offset-name: get-column-selectors(#{$i}-#{$column}, $breakpoint, true);
 				$column-width-index: update-list-in-map($column-width-index, $calc-width, $class-name);
 				$column-offset-index: update-list-in-map($column-offset-index, $calc-width, $offset-name);
 			} @else {}
 		}
 	}
 
-	$column-width-index: update-list-in-map($column-width-index, 100%, get-class-name(1, $breakpoint));
-
+	$column-width-index: update-list-in-map($column-width-index, 100%, get-column-selectors(1, $breakpoint));
+	
 	@each $width, $classes in $column-width-index {
 		#{join($classes, (), comma)} {
 			@if not($float-layout) {
@@ -182,51 +159,33 @@
 	}
 }
 
-@mixin generate-visibility ($breakpoint: null) {
-	@if $breakpoint {
-		$breakpoint: -#{$breakpoint};
-	}
-
-    [hidden#{$breakpoint}], .hidden#{$breakpoint} {
-        display: none !important;
-    }
-
-    [visible#{$breakpoint}], .visible#{$breakpoint} {
-        display: block !important;
-    }
-}
-
 @mixin generate-align ($breakpoint: null) {
-	@if $breakpoint {
-		$breakpoint: -#{$breakpoint};
-	}
 
-	.ta-l#{$breakpoint} {
-		text-align: left;
-		@if not($float-layout) {
-			text-align: start;
-		}
-	}
-
-	.ta-c#{$breakpoint} { text-align: center; }
-
-	.ta-r#{$breakpoint} {
-		text-align: right;
-		@if not($float-layout) {
-			text-align: end;
-		}
-	}
-
-	$classes: ();
+	$ta-l: left;
+	$ta-r: right;
 
 	@if not($float-layout) {
+		$ta-l: left start;
+		$ta-r: right end;
+	}
 
-		$classes: (
+	$text-align: (
+		text-align: (
+			ta-l: $ta-l,
+			ta-c: center,
+			ta-r: $ta-r
+		)
+	);
+
+	$flex-align: ();
+
+	@if not($float-layout) {
+		$flex-align: (
 			flex: (
-				fx-auto: 1 1 auto,
-				fx-g: 1 0 auto,
-				fx-s: 0 1 auto,
-				fx-none: 0 0 auto,
+				fx-auto: '1 1 auto',
+				fx-g: '1 0 auto',
+				fx-s: '0 1 auto',
+				fx-none: '0 0 auto',
 			),
 			flex-direction: (
 				fxd-c: column,
@@ -273,10 +232,32 @@
 		);
 	}
 
+	$classes: map-merge($text-align , $flex-align);
+	@include generate-selectors-by-map($classes, $breakpoint);
+}
+
+@mixin generate-visibility ($breakpoint: null) {
+	@if $breakpoint {
+		$breakpoint: -#{$breakpoint};
+	}
+
+    [hidden#{$breakpoint}], .hidden#{$breakpoint} {
+        display: none !important;
+	}
+	
+    [visible#{$breakpoint}], .visible#{$breakpoint} {
+        display: block !important;
+    }
+}
+
+@mixin generate-selectors-by-map ($classes: (), $breakpoint: null) {
 	@each $property, $map in $classes {
 		@each $key, $value in $map {
-			.#{$key}#{$breakpoint} {
-				#{$property}: #{$value};
+			$selectors: get-selectors-by-name($key, $breakpoint);
+			#{$selectors} {
+				@each $v in $value {
+					#{$property}: #{$v};
+				}
 			}
 		}
 	}

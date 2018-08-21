@@ -1,5 +1,7 @@
 $columns: 5 12 !default;
-$class-prefix: 'col-' !default;
+$prefix: 'col-' !default;
+$class-selector: true !default;
+$attribute-selector: false !default;
 $column-offset: true !default;
 $float-layout: false !default;
 $responsive: true !default;

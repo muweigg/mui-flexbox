@@ -24,15 +24,53 @@
 	@return $columns-new;
 }
 
-@function get-class-name ($name, $breakpoint: null, $offset: false) {
+@function get-selector-prefix ($ratio, $breakpoint: null, $offset: false) {
 	@if $breakpoint {
 		$breakpoint: #{$breakpoint}-;
 	}
-	$class-name: '.#{$class-prefix}#{$breakpoint}#{$name}';
+	$selector-prefix: #{$prefix}#{$breakpoint};
 	@if $offset {
-		$class-name: '.#{$class-prefix}offset-#{$breakpoint}#{$name}';
+		$selector-prefix: #{$prefix}offset-#{$breakpoint};
 	}
-	@return $class-name;
+	@return $selector-prefix;
+}
+
+@function get-column-selectors ($ratio, $breakpoint: null, $offset: false) {
+	$selectors: '';
+	@if $class-selector {
+		$selectors: '.#{get-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}';
+	}
+	@if $attribute-selector {
+		@if $selectors == '' {
+			$selectors: '[#{get-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
+		} @else {
+			$selectors: $selectors + ', [#{get-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
+		}
+	}
+	@return $selectors;
+}
+
+@function get-selectors-by-name ($name, $breakpoint: null) {
+	$parent-symbol: null;
+	@if str-slice($name, 1, 1) == '&' {
+		$parent-symbol: '&';
+		$name: str-slice($name, 2, str-length($name));
+	}
+	@if $breakpoint {
+		$breakpoint: -#{$breakpoint};
+	}
+	$selectors: '';
+	@if $class-selector {
+		$selectors: '#{$parent-symbol}.#{$name}#{$breakpoint}';
+	}
+	@if $attribute-selector {
+		@if $selectors == '' {
+			$selectors: '#{$parent-symbol}[#{$name}#{$breakpoint}]';
+		} @else {
+			$selectors: $selectors + ', #{$parent-symbol}[#{$name}#{$breakpoint}]';
+		}
+	}
+	@return $selectors;
 }
 
 @function get-breakpoint ($breakpoint) {
