@@ -1,5 +1,8 @@
 $columns: 5 12 !default;
+$class-prefix: 'col-' !default;
 $column-offset: true !default;
+$float-layout: false !default;
+$responsive: true !default;
 $breakpoints: (
 	sm: 36em, // 576px
 	md: 48em, // 768px
@@ -13,5 +16,3 @@ $breakpoints-gap: (
 	// lg: 5px,
 	// xl: 5px,
 ) !default;
-$prefix: 'col-' !default;
-$float-layout: false !default;

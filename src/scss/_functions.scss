@@ -28,9 +28,9 @@
 	@if $breakpoint {
 		$breakpoint: #{$breakpoint}-;
 	}
-	$class-name: '.#{$prefix}#{$breakpoint}#{$name}';
+	$class-name: '.#{$class-prefix}#{$breakpoint}#{$name}';
 	@if $offset {
-		$class-name: '.#{$prefix}offset-#{$breakpoint}#{$name}';
+		$class-name: '.#{$class-prefix}offset-#{$breakpoint}#{$name}';
 	}
 	@return $class-name;
 }
