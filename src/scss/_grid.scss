@@ -8,20 +8,20 @@
 @include generate-base;
 @include generate-gap;
 @include generate-columns;
-@include generate-display;
-@include generate-position;
-@include generate-align;
 @include generate-visibility;
+@if $align { @include generate-align; }
+@if $display { @include generate-display; }
+@if $position { @include generate-position; }
 
 @if $responsive {
 	@each $breakpoint, $width in $breakpoints {
 		@include breakpoint-up ($breakpoint) {
 			@include generate-gap($breakpoint);
 			@include generate-columns($breakpoint);
-			// @include generate-display($breakpoint);
-			// @include generate-position($breakpoint);
-			@include generate-align($breakpoint);
 			@include generate-visibility($breakpoint);
+			@if $align { @include generate-align($breakpoint); }
+			@if $display { @include generate-display($breakpoint); }
+			@if $position { @include generate-position($breakpoint); }
 		};
 	}
 }

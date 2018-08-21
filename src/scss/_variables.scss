@@ -3,7 +3,9 @@ $prefix: 'col-' !default;
 $class-selector: true !default;
 $attribute-selector: false !default;
 $column-offset: true !default;
-$float-layout: false !default;
+$align: true !default;
+$display: true !default;
+$position: true !default;
 $responsive: true !default;
 $breakpoints: (
 	sm: 36em, // 576px
@@ -18,3 +20,4 @@ $breakpoints-gap: (
 	// lg: 5px,
 	// xl: 5px,
 ) !default;
+$float-layout: false !default;
