@@ -24,7 +24,7 @@
 	@return $columns-new;
 }
 
-@function get-selector-prefix ($ratio, $breakpoint: null, $offset: false) {
+@function get-column-selector-prefix ($ratio, $breakpoint: null, $offset: false) {
 	@if $breakpoint {
 		$breakpoint: #{$breakpoint}-;
 	}
@@ -38,13 +38,13 @@
 @function get-column-selectors ($ratio, $breakpoint: null, $offset: false) {
 	$selectors: '';
 	@if $class-selector {
-		$selectors: '.#{get-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}';
+		$selectors: '.#{get-column-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}';
 	}
 	@if $attribute-selector {
 		@if $selectors == '' {
-			$selectors: '[#{get-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
+			$selectors: '[#{get-column-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
 		} @else {
-			$selectors: $selectors + ', [#{get-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
+			$selectors: $selectors + ', [#{get-column-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
 		}
 	}
 	@return $selectors;
