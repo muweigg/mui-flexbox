@@ -15,14 +15,14 @@
 @if $position { @include generate-position; }
 
 @if $responsive {
-	@each $breakpoint, $width in $breakpoints {
-		@include breakpoint-up ($breakpoint) {
-			@include generate-gap($breakpoint);
-			@include generate-columns($breakpoint);
-			@include generate-visibility($breakpoint);
-			@if $align { @include generate-align($breakpoint); }
-			@if $display { @include generate-display($breakpoint); }
-			@if $position { @include generate-position($breakpoint); }
-		};
-	}
+  @each $breakpoint, $width in $breakpoints {
+    @include breakpoint-up ($breakpoint) {
+      @include generate-gap($breakpoint);
+      @include generate-columns($breakpoint);
+      @include generate-visibility($breakpoint);
+      @if $align { @include generate-align($breakpoint); }
+      @if $display { @include generate-display($breakpoint); }
+      @if $position { @include generate-position($breakpoint); }
+    };
+  }
 }

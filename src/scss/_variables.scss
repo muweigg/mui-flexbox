@@ -9,16 +9,16 @@ $display: true !default;
 $position: true !default;
 $responsive: true !default;
 $breakpoints: (
-	sm: 36em, // 576px
-	md: 48em, // 768px
-	lg: 62em, // 992px
-	xl: 75em, // 1200px
+  sm: 36em, // 576px
+  md: 48em, // 768px
+  lg: 62em, // 992px
+  xl: 75em, // 1200px
 ) !default;
 $breakpoints-gap: (
-	default: 5px, // required
-	// sm: 5px,
-	// md: 5px,
-	// lg: 5px,
-	// xl: 5px,
+  default: 5px, // required
+  // sm: 5px,
+  // md: 5px,
+  // lg: 5px,
+  // xl: 5px,
 ) !default;
 $float-layout: false !default;
