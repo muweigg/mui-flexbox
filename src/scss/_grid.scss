@@ -9,6 +9,7 @@
 @include generate-gap;
 @include generate-columns;
 @include generate-visibility;
+@if $justify { @include generate-justify; }
 @if $align { @include generate-align; }
 @if $display { @include generate-display; }
 @if $position { @include generate-position; }

@@ -3,6 +3,7 @@ $prefix: 'col-' !default;
 $class-selector: true !default;
 $attribute-selector: false !default;
 $column-offset: true !default;
+$justify: true !default;
 $align: true !default;
 $display: true !default;
 $position: true !default;
@@ -20,4 +21,4 @@ $breakpoints-gap: (
 	// lg: 5px,
 	// xl: 5px,
 ) !default;
-$float-layout: false !default;
+$float-layout: true !default;
