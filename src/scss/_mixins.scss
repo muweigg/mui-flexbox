@@ -133,7 +133,7 @@
 
     [hidden#{$breakpoint}], .hidden#{$breakpoint} {
         display: none !important;
-  }
+    }
   
     [visible#{$breakpoint}], .visible#{$breakpoint} {
         display: block !important;
