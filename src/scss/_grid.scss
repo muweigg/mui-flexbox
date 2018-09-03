@@ -2,7 +2,7 @@
 @import 'mixins';
 
 @if not($class-selector) and not($attribute-selector) {
-    $class-selector: true;
+  $class-selector: true;
 }
 
 @include generate-base;
