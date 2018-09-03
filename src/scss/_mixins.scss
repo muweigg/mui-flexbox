@@ -166,48 +166,48 @@
     $flex-align: (
       flex: (
         fx-auto: '1 1 auto',
-        fx-g: '1 0 auto',
-        fx-s: '0 1 auto',
+        fx-g   : '1 0 auto',
+        fx-s   : '0 1 auto',
         fx-none: '0 0 auto',
       ),
       flex-direction: (
-        fxd-c: column,
+        fxd-c : column,
         fxd-cr: column-reverse,
-        fxd-r: row,
+        fxd-r : row,
         fxd-rr: row-reverse,
       ),
       flex-wrap: (
-        fxw-c: wrap,
-        fxw-n: nowrap,
+        fxw-c : wrap,
+        fxw-n : nowrap,
         fxw-wr: wrap-reverse,
       ),
       align-content: (
         ac-fs: flex-start,
         ac-fe: flex-end,
-        ac-c:  center,
-        ac-s:  stretch,
+        ac-c : center,
+        ac-s : stretch,
         ac-sa: space-around,
         ac-sb: space-between,
       ),
       align-items: (
         ai-fs: flex-start,
         ai-fe: flex-end,
-        ai-c:  center,
-        ai-s:  stretch,
-        ai-b:  baseline,
+        ai-c : center,
+        ai-s : stretch,
+        ai-b : baseline,
       ),
       align-self: (
-        as-a:  auto,
+        as-a : auto,
         as-fs: flex-start,
         as-fe: flex-end,
-        as-c:  center,
-        as-s:  stretch,
-        as-b:  baseline,
+        as-c : center,
+        as-s : stretch,
+        as-b : baseline,
       ),
       justify-content: (
         jc-fs: flex-start,
         jc-fe: flex-end,
-        jc-c:  center,
+        jc-c : center,
         jc-sa: space-around,
         jc-sb: space-between,
         jc-se: space-evenly,
@@ -223,9 +223,9 @@
 
   $classes: (
     display: (
-      d-i:  inline,
+      d-i : inline,
       d-ib: inline-block,
-      d-b:  block,
+      d-b : block,
     )
   );
 
@@ -292,6 +292,6 @@
   &::after {
     content: '';
     display: block;
-    clear: both;
+    clear  : both;
   }
 }
