@@ -4,23 +4,23 @@
 @mixin generate-base () {
 
   #{get-selectors-by-name(row)} {
-      box-sizing: border-box;
+    box-sizing: border-box;
 
-      @if not($float-layout) {
-        display: flex;
-        flex-wrap: wrap;
-      }
+    @if not($float-layout) {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-      [class*='col-'] {
-        @if $float-layout {
-          float: left;
-        }
-        box-sizing: border-box;
-      }
-
+    [class*='col-'] {
       @if $float-layout {
-        @include clearfix;
+        float: left;
       }
+      box-sizing: border-box;
+    }
+
+    @if $float-layout {
+      @include clearfix;
+    }
   }
 }
 
