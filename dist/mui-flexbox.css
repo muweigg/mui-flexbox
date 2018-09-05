@@ -546,14 +546,18 @@ template {
   display: inline-block !important; }
 
 .ta-l {
-  text-align: left;
-  text-align: start; }
+  text-align: left; }
 
 .ta-c {
   text-align: center; }
 
 .ta-r {
-  text-align: right;
+  text-align: right; }
+
+.ta-s {
+  text-align: start; }
+
+.ta-e {
   text-align: end; }
 
 .va-t {
@@ -1001,12 +1005,14 @@ template {
   .v-c-sm {
     visibility: collapse; }
   .ta-l-sm {
-    text-align: left;
-    text-align: start; }
+    text-align: left; }
   .ta-c-sm {
     text-align: center; }
   .ta-r-sm {
-    text-align: right;
+    text-align: right; }
+  .ta-s-sm {
+    text-align: start; }
+  .ta-e-sm {
     text-align: end; }
   .va-t-sm {
     vertical-align: top; }
@@ -1357,12 +1363,14 @@ template {
   .v-c-md {
     visibility: collapse; }
   .ta-l-md {
-    text-align: left;
-    text-align: start; }
+    text-align: left; }
   .ta-c-md {
     text-align: center; }
   .ta-r-md {
-    text-align: right;
+    text-align: right; }
+  .ta-s-md {
+    text-align: start; }
+  .ta-e-md {
     text-align: end; }
   .va-t-md {
     vertical-align: top; }
@@ -1713,12 +1721,14 @@ template {
   .v-c-lg {
     visibility: collapse; }
   .ta-l-lg {
-    text-align: left;
-    text-align: start; }
+    text-align: left; }
   .ta-c-lg {
     text-align: center; }
   .ta-r-lg {
-    text-align: right;
+    text-align: right; }
+  .ta-s-lg {
+    text-align: start; }
+  .ta-e-lg {
     text-align: end; }
   .va-t-lg {
     vertical-align: top; }
@@ -2069,12 +2079,14 @@ template {
   .v-c-xl {
     visibility: collapse; }
   .ta-l-xl {
-    text-align: left;
-    text-align: start; }
+    text-align: left; }
   .ta-c-xl {
     text-align: center; }
   .ta-r-xl {
-    text-align: right;
+    text-align: right; }
+  .ta-s-xl {
+    text-align: start; }
+  .ta-e-xl {
     text-align: end; }
   .va-t-xl {
     vertical-align: top; }

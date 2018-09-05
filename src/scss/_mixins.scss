@@ -144,19 +144,13 @@
 
 @mixin generate-align ($breakpoint: null) {
 
-  $ta-l: left;
-  $ta-r: right;
-
-  @if not($float-layout) {
-    $ta-l: left start;
-    $ta-r: right end;
-  }
-
   $text-align: (
     text-align: (
-      ta-l: $ta-l,
+      ta-l: left,
       ta-c: center,
-      ta-r: $ta-r
+      ta-r: right,
+      ta-s: start,
+      ta-e: end
     )
   );
 
