@@ -8,12 +8,15 @@
 @include generate-base;
 @include generate-gap;
 @include generate-columns;
-@include generate-visibility;
+@include generate-visible;
 @if $justify { @include generate-justify; }
 @if $emmet-align { @include generate-align; }
 @if $emmet-float { @include generate-float; }
+@if $emmet-cursor { @include generate-cursor; }
 @if $emmet-display { @include generate-display; }
+@if $emmet-overflow { @include generate-overflow; }
 @if $emmet-position { @include generate-position; }
+@if $emmet-visibility { @include generate-visibility; }
 
 @if $responsive {
   @each $breakpoint, $width in $breakpoints {
@@ -23,8 +26,11 @@
       @include generate-visibility($breakpoint);
       @if $emmet-align { @include generate-align($breakpoint); }
       @if $emmet-float { @include generate-float($breakpoint); }
+      // @if $emmet-cursor { @include generate-cursor($breakpoint); }
       @if $emmet-display { @include generate-display($breakpoint); }
+      @if $emmet-overflow { @include generate-overflow($breakpoint); }
       @if $emmet-position { @include generate-position($breakpoint); }
+      @if $emmet-visibility { @include generate-visibility($breakpoint); }
     };
   }
 }

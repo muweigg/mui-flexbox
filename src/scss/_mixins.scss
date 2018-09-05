@@ -128,7 +128,7 @@
   }
 }
 
-@mixin generate-visibility ($breakpoint: null) {
+@mixin generate-visible ($breakpoint: null) {
   @if $breakpoint {
     $breakpoint: -#{$breakpoint};
   }
@@ -246,13 +246,32 @@
   @include generate-selectors-by-map($classes, $breakpoint);
 }
 
+@mixin generate-cursor ($breakpoint: null) {
+
+  $classes: (
+    cursor: (
+      cur-a : auto,
+      cur-d : default,
+      cur-c : crosshair,
+      cur-ha: hand,
+      cur-he: help,
+      cur-m : move,
+      cur-p : pointer,
+      cur-t : text,
+    )
+  );
+
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
 @mixin generate-display ($breakpoint: null) {
 
   $classes: (
     display: (
+      d-n : none,
+      d-b : block,
       d-i : inline,
       d-ib: inline-block,
-      d-b : block,
     )
   );
 
@@ -266,6 +285,35 @@
   @include generate-selectors-by-map($classes, $breakpoint);
 }
 
+@mixin generate-overflow ($breakpoint: null) {
+
+  $classes: (
+    overflow: (
+      ov  : hidden,
+      ov-v: visible,
+      ov-h: hidden,
+      ov-s: scroll,
+      ov-a: auto,
+    ),
+    overflow-x: (
+      ovx  : hidden,
+      ovx-v: visible,
+      ovx-h: hidden,
+      ovx-s: scroll,
+      ovx-a: auto,
+    ),
+    overflow-y: (
+      ovy  : hidden,
+      ovy-v: visible,
+      ovy-h: hidden,
+      ovy-s: scroll,
+      ovy-a: auto,
+    ),
+  );
+
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
 @mixin generate-position ($breakpoint: null) {
 
   $classes: (
@@ -274,6 +322,19 @@
       pos-a: absolute,
       pos-r: relative,
       pos-f: fixed,
+    )
+  );
+
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
+@mixin generate-visibility ($breakpoint: null) {
+
+  $classes: (
+    visibility: (
+      v-v: visible,
+      v-h: hidden,
+      v-c: collapse,
     )
   );
 
