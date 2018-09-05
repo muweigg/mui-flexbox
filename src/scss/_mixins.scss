@@ -160,6 +160,19 @@
     )
   );
 
+  $vertical-align: (
+    vertical-align: (
+      va-t  : top,
+      va-tt : text-top,
+      va-m  : middle,
+      va-bl : baseline,
+      va-b  : bottom,
+      va-tb : text-bottom,
+      va-sup: super,
+      va-sub: sub
+    )
+  );
+
   $flex-align: ();
 
   @if not($float-layout) {
@@ -215,7 +228,8 @@
     );
   }
 
-  $classes: map-merge($text-align , $flex-align);
+  $classes: map-merge($text-align , $vertical-align);
+  $classes: map-merge($classes , $flex-align);
   @include generate-selectors-by-map($classes, $breakpoint);
 }
 
@@ -253,19 +267,6 @@
   @include generate-selectors-by-map($classes, $breakpoint);
 }
 
-@mixin generate-selectors-by-map ($classes: (), $breakpoint: null) {
-  @each $property, $map in $classes {
-    @each $key, $value in $map {
-      $selectors: get-selectors-by-name($key, $breakpoint);
-      #{$selectors} {
-        @each $v in $value {
-          #{$property}: #{$v};
-        }
-      }
-    }
-  }
-}
-
 @mixin breakpoint-up ($breakpoint) {
   $breakpoint: get-breakpoint($breakpoint);
   @media (min-width: $breakpoint) {
@@ -288,7 +289,20 @@
   }
 }
 
-@mixin clearfix() {
+@mixin generate-selectors-by-map ($classes: (), $breakpoint: null) {
+  @each $property, $map in $classes {
+    @each $key, $value in $map {
+      $selectors: get-selectors-by-name($key, $breakpoint);
+      #{$selectors} {
+        @each $v in $value {
+          #{$property}: #{$v};
+        }
+      }
+    }
+  }
+}
+
+@mixin clearfix () {
   &::after {
     content: '';
     display: block;

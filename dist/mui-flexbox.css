@@ -556,6 +556,30 @@ template {
   text-align: right;
   text-align: end; }
 
+.va-t {
+  vertical-align: top; }
+
+.va-tt {
+  vertical-align: text-top; }
+
+.va-m {
+  vertical-align: middle; }
+
+.va-bl {
+  vertical-align: baseline; }
+
+.va-b {
+  vertical-align: bottom; }
+
+.va-tb {
+  vertical-align: text-bottom; }
+
+.va-sup {
+  vertical-align: super; }
+
+.va-sub {
+  vertical-align: sub; }
+
 .fx-auto {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -892,6 +916,22 @@ template {
   .ta-r-sm {
     text-align: right;
     text-align: end; }
+  .va-t-sm {
+    vertical-align: top; }
+  .va-tt-sm {
+    vertical-align: text-top; }
+  .va-m-sm {
+    vertical-align: middle; }
+  .va-bl-sm {
+    vertical-align: baseline; }
+  .va-b-sm {
+    vertical-align: bottom; }
+  .va-tb-sm {
+    vertical-align: text-bottom; }
+  .va-sup-sm {
+    vertical-align: super; }
+  .va-sub-sm {
+    vertical-align: sub; }
   .fx-auto-sm {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -1186,6 +1226,22 @@ template {
   .ta-r-md {
     text-align: right;
     text-align: end; }
+  .va-t-md {
+    vertical-align: top; }
+  .va-tt-md {
+    vertical-align: text-top; }
+  .va-m-md {
+    vertical-align: middle; }
+  .va-bl-md {
+    vertical-align: baseline; }
+  .va-b-md {
+    vertical-align: bottom; }
+  .va-tb-md {
+    vertical-align: text-bottom; }
+  .va-sup-md {
+    vertical-align: super; }
+  .va-sub-md {
+    vertical-align: sub; }
   .fx-auto-md {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -1480,6 +1536,22 @@ template {
   .ta-r-lg {
     text-align: right;
     text-align: end; }
+  .va-t-lg {
+    vertical-align: top; }
+  .va-tt-lg {
+    vertical-align: text-top; }
+  .va-m-lg {
+    vertical-align: middle; }
+  .va-bl-lg {
+    vertical-align: baseline; }
+  .va-b-lg {
+    vertical-align: bottom; }
+  .va-tb-lg {
+    vertical-align: text-bottom; }
+  .va-sup-lg {
+    vertical-align: super; }
+  .va-sub-lg {
+    vertical-align: sub; }
   .fx-auto-lg {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -1774,6 +1846,22 @@ template {
   .ta-r-xl {
     text-align: right;
     text-align: end; }
+  .va-t-xl {
+    vertical-align: top; }
+  .va-tt-xl {
+    vertical-align: text-top; }
+  .va-m-xl {
+    vertical-align: middle; }
+  .va-bl-xl {
+    vertical-align: baseline; }
+  .va-b-xl {
+    vertical-align: bottom; }
+  .va-tb-xl {
+    vertical-align: text-bottom; }
+  .va-sup-xl {
+    vertical-align: super; }
+  .va-sub-xl {
+    vertical-align: sub; }
   .fx-auto-xl {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
