@@ -10,9 +10,10 @@
 @include generate-columns;
 @include generate-visibility;
 @if $justify { @include generate-justify; }
-@if $align { @include generate-align; }
-@if $display { @include generate-display; }
-@if $position { @include generate-position; }
+@if $emmet-align { @include generate-align; }
+@if $emmet-float { @include generate-float; }
+@if $emmet-display { @include generate-display; }
+@if $emmet-position { @include generate-position; }
 
 @if $responsive {
   @each $breakpoint, $width in $breakpoints {
@@ -20,9 +21,10 @@
       @include generate-gap($breakpoint);
       @include generate-columns($breakpoint);
       @include generate-visibility($breakpoint);
-      @if $align { @include generate-align($breakpoint); }
-      @if $display { @include generate-display($breakpoint); }
-      @if $position { @include generate-position($breakpoint); }
+      @if $emmet-align { @include generate-align($breakpoint); }
+      @if $emmet-float { @include generate-float($breakpoint); }
+      @if $emmet-display { @include generate-display($breakpoint); }
+      @if $emmet-position { @include generate-position($breakpoint); }
     };
   }
 }

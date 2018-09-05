@@ -4,9 +4,10 @@ $class-selector: true !default;
 $attribute-selector: false !default;
 $column-offset: true !default;
 $justify: true !default;
-$align: true !default;
-$display: true !default;
-$position: true !default;
+$emmet-align: true !default;
+$emmet-float: true !default;
+$emmet-display: true !default;
+$emmet-position: true !default;
 $responsive: true !default;
 $breakpoints: (
   sm: 36em, // 576px

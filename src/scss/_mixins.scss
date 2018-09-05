@@ -233,6 +233,19 @@
   @include generate-selectors-by-map($classes, $breakpoint);
 }
 
+@mixin generate-float ($breakpoint: null) {
+
+  $classes: (
+    float: (
+      fl-n: none,
+      fl-l: left,
+      fl-r: right
+    )
+  );
+
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
 @mixin generate-display ($breakpoint: null) {
 
   $classes: (
