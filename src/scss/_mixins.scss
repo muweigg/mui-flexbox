@@ -11,7 +11,7 @@
       flex-wrap: wrap;
     }
 
-    [class*='col-'] {
+    [class*='#{$prefix}'], [#{remove-last-symbol($prefix)}] {
       @if $float-layout {
         float: left;
       }
@@ -63,14 +63,14 @@
   #{get-selectors-by-name(row)} {
     margin-left: -$gap;
     margin-right: -$gap;
-    [class*='col-'] {
+    [class*='#{$prefix}'], [#{remove-last-symbol($prefix)}] {
       padding-left: $gap;
       padding-right: $gap;
     }
     #{get-selectors-by-name('&gapless')} {
       margin-left: 0;
       margin-right: 0;
-      [class*='col-'] {
+      [class*='#{$prefix}'], [#{remove-last-symbol($prefix)}] {
         padding-left: 0;
         padding-right: 0;
       }

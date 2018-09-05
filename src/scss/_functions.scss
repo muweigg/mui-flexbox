@@ -80,3 +80,10 @@
   }
   @return $breakpoint;
 }
+
+@function remove-last-symbol ($prefix) {
+  @if str-slice($prefix, str-length($prefix), str-length($prefix)) == '-' {
+    $prefix: str-slice($prefix, 1, str-length($prefix) - 1);
+  }
+  @return $prefix;
+}
