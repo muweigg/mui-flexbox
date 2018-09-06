@@ -24,27 +24,32 @@
   @return $columns-new;
 }
 
-@function get-column-selector-prefix ($ratio, $breakpoint: null, $offset: false) {
-  @if $breakpoint {
-    $breakpoint: #{$breakpoint}-;
-  }
-  $selector-prefix: #{$prefix}#{$breakpoint};
+@function get-column-selector-prefix ($offset: false) {
+  $selector-prefix: #{$prefix};
   @if $offset {
-    $selector-prefix: #{$prefix}offset-#{$breakpoint};
+    $selector-prefix: #{$prefix}offset-;
   }
   @return $selector-prefix;
 }
 
+@function get-column-selector-suffix ($breakpoint: null) {
+  $selector-suffix: null;
+  @if $breakpoint {
+    $selector-suffix: -#{$breakpoint};
+  }
+  @return $selector-suffix;
+}
+
 @function get-column-selectors ($ratio, $breakpoint: null, $offset: false) {
-  $selectors: '';
+  $selectors: null;
   @if $class-selector {
-    $selectors: '.#{get-column-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}';
+    $selectors: '.#{get-column-selector-prefix($offset)}#{$ratio}#{get-column-selector-suffix($breakpoint)}';
   }
   @if $attribute-selector {
     @if $selectors == '' {
-      $selectors: '[#{get-column-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
+      $selectors: '[#{get-column-selector-prefix($offset)}#{$ratio}#{get-column-selector-suffix($breakpoint)}]';
     } @else {
-      $selectors: $selectors + ', [#{get-column-selector-prefix($ratio, $breakpoint, $offset)}#{$ratio}]';
+      $selectors: $selectors + ', [#{get-column-selector-prefix($offset)}#{$ratio}#{get-column-selector-suffix($breakpoint)}]';
     }
   }
   @return $selectors;
