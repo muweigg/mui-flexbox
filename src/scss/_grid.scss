@@ -23,7 +23,6 @@
     @include generate-media-queries ($breakpoint) {
       @include generate-gap($breakpoint);
       @include generate-columns($breakpoint);
-      @include generate-visible($breakpoint);
       @if $emmet-align { @include generate-align($breakpoint); }
       @if $emmet-float { @include generate-float($breakpoint); }
       // @if $emmet-cursor { @include generate-cursor($breakpoint); }
@@ -31,6 +30,11 @@
       @if $emmet-overflow { @include generate-overflow($breakpoint); }
       @if $emmet-position { @include generate-position($breakpoint); }
       @if $emmet-visibility { @include generate-visibility($breakpoint); }
-    };
+    }
+  }
+  @each $breakpoint, $width in $breakpoints {
+    @include generate-visible-media-queries ($breakpoint) {
+      @include generate-visible($breakpoint);
+    }
   }
 }

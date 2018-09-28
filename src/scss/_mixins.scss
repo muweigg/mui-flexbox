@@ -382,6 +382,21 @@
   }
 }
 
+@mixin generate-visible-media-queries ($breakpoint: null) {
+  $media-queries: '';
+  $keys: map-keys($breakpoints);
+  $index: index($keys, $breakpoint);
+  $begin: get-breakpoint($breakpoint);
+  $len: length($keys);
+  @debug $index, $len;
+  @if ($index == length($keys)) {
+    @include breakpoint-up($begin) { @content; }
+  } @else {
+    $end: get-breakpoint(nth($keys, $index + 1));
+    @include breakpoint-between($begin, $end) { @content; }
+  }
+}
+
 @mixin clearfix () {
   &::after {
     content: '';
