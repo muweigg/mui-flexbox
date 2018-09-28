@@ -343,7 +343,7 @@
 }
 
 @mixin breakpoint-down ($breakpoint) {
-  $breakpoint: get-breakpoint($breakpoint) - 0.001;
+  $breakpoint: get-breakpoint($breakpoint);
   @media (max-width: $breakpoint) {
     @content;
   }
