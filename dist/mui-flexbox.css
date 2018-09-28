@@ -520,7 +520,7 @@ template {
   display: none !important; }
 
 [visible], .visible {
-  display: block !important; }
+  display: inherit !important; }
 
 .ta-l {
   text-align: left; }
@@ -978,7 +978,7 @@ template {
   [hidden-sm], .hidden-sm {
     display: none !important; }
   [visible-sm], .visible-sm {
-    display: block !important; }
+    display: inherit !important; }
   .ta-l-sm {
     text-align: left; }
   .ta-c-sm {
@@ -1334,7 +1334,7 @@ template {
   [hidden-md], .hidden-md {
     display: none !important; }
   [visible-md], .visible-md {
-    display: block !important; }
+    display: inherit !important; }
   .ta-l-md {
     text-align: left; }
   .ta-c-md {
@@ -1690,7 +1690,7 @@ template {
   [hidden-lg], .hidden-lg {
     display: none !important; }
   [visible-lg], .visible-lg {
-    display: block !important; }
+    display: inherit !important; }
   .ta-l-lg {
     text-align: left; }
   .ta-c-lg {
@@ -2046,7 +2046,7 @@ template {
   [hidden-xl], .hidden-xl {
     display: none !important; }
   [visible-xl], .visible-xl {
-    display: block !important; }
+    display: inherit !important; }
   .ta-l-xl {
     text-align: left; }
   .ta-c-xl {
