@@ -12,6 +12,8 @@ $emmet-overflow: true !default;
 $emmet-position: true !default;
 $emmet-visibility: true !default;
 $responsive: true !default;
+$media-queries-placeholder: '{breakpoints}' !default;
+$media-queries: 'screen and (min-width: #{$media-queries-placeholder})' !default;
 $breakpoints: (
   sm: 36em, // 576px
   md: 48em, // 768px

@@ -20,7 +20,7 @@
 
 @if $responsive {
   @each $breakpoint, $width in $breakpoints {
-    @include breakpoint-up ($breakpoint) {
+    @include generate-media-queries ($breakpoint) {
       @include generate-gap($breakpoint);
       @include generate-columns($breakpoint);
       @include generate-visibility($breakpoint);
