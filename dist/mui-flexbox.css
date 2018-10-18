@@ -601,7 +601,7 @@ template {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse; }
 
-.fxw-c {
+.fxw-w {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
@@ -731,128 +731,7 @@ template {
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly; }
 
-.fl-n {
-  float: none; }
-
-.fl-l {
-  float: left; }
-
-.fl-r {
-  float: right; }
-
-.cur-a {
-  cursor: auto; }
-
-.cur-d {
-  cursor: default; }
-
-.cur-c {
-  cursor: crosshair; }
-
-.cur-ha {
-  cursor: hand; }
-
-.cur-he {
-  cursor: help; }
-
-.cur-m {
-  cursor: move; }
-
-.cur-p {
-  cursor: pointer; }
-
-.cur-t {
-  cursor: text; }
-
-.d-n {
-  display: none; }
-
-.d-b {
-  display: block; }
-
-.d-i {
-  display: inline; }
-
-.d-ib {
-  display: inline-block; }
-
-.d-f {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
-.d-if {
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex; }
-
-.ov {
-  overflow: hidden; }
-
-.ov-v {
-  overflow: visible; }
-
-.ov-h {
-  overflow: hidden; }
-
-.ov-s {
-  overflow: scroll; }
-
-.ov-a {
-  overflow: auto; }
-
-.ovx {
-  overflow-x: hidden; }
-
-.ovx-v {
-  overflow-x: visible; }
-
-.ovx-h {
-  overflow-x: hidden; }
-
-.ovx-s {
-  overflow-x: scroll; }
-
-.ovx-a {
-  overflow-x: auto; }
-
-.ovy {
-  overflow-y: hidden; }
-
-.ovy-v {
-  overflow-y: visible; }
-
-.ovy-h {
-  overflow-y: hidden; }
-
-.ovy-s {
-  overflow-y: scroll; }
-
-.ovy-a {
-  overflow-y: auto; }
-
-.pos-s {
-  position: static; }
-
-.pos-a {
-  position: absolute; }
-
-.pos-r {
-  position: relative; }
-
-.pos-f {
-  position: fixed; }
-
-.v-v {
-  visibility: visible; }
-
-.v-h {
-  visibility: hidden; }
-
-.v-c {
-  visibility: collapse; }
-
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 36em) and (max-width: 47.999em) {
   .row {
     margin-left: -5px;
     margin-right: -5px; }
@@ -1033,7 +912,7 @@ template {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
-  .fxw-c-sm {
+  .fxw-w-sm {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
@@ -1136,75 +1015,9 @@ template {
   .jc-se-sm {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; }
-  .fl-n-sm {
-    float: none; }
-  .fl-l-sm {
-    float: left; }
-  .fl-r-sm {
-    float: right; }
-  .d-n-sm {
-    display: none; }
-  .d-b-sm {
-    display: block; }
-  .d-i-sm {
-    display: inline; }
-  .d-ib-sm {
-    display: inline-block; }
-  .d-f-sm {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .d-if-sm {
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex; }
-  .ov-sm {
-    overflow: hidden; }
-  .ov-v-sm {
-    overflow: visible; }
-  .ov-h-sm {
-    overflow: hidden; }
-  .ov-s-sm {
-    overflow: scroll; }
-  .ov-a-sm {
-    overflow: auto; }
-  .ovx-sm {
-    overflow-x: hidden; }
-  .ovx-v-sm {
-    overflow-x: visible; }
-  .ovx-h-sm {
-    overflow-x: hidden; }
-  .ovx-s-sm {
-    overflow-x: scroll; }
-  .ovx-a-sm {
-    overflow-x: auto; }
-  .ovy-sm {
-    overflow-y: hidden; }
-  .ovy-v-sm {
-    overflow-y: visible; }
-  .ovy-h-sm {
-    overflow-y: hidden; }
-  .ovy-s-sm {
-    overflow-y: scroll; }
-  .ovy-a-sm {
-    overflow-y: auto; }
-  .pos-s-sm {
-    position: static; }
-  .pos-a-sm {
-    position: absolute; }
-  .pos-r-sm {
-    position: relative; }
-  .pos-f-sm {
-    position: fixed; }
-  .v-v-sm {
-    visibility: visible; }
-  .v-h-sm {
-    visibility: hidden; }
-  .v-c-sm {
-    visibility: collapse; } }
+    justify-content: space-evenly; } }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 48em) and (max-width: 61.999em) {
   .row {
     margin-left: -5px;
     margin-right: -5px; }
@@ -1385,7 +1198,7 @@ template {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
-  .fxw-c-md {
+  .fxw-w-md {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
@@ -1488,75 +1301,9 @@ template {
   .jc-se-md {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; }
-  .fl-n-md {
-    float: none; }
-  .fl-l-md {
-    float: left; }
-  .fl-r-md {
-    float: right; }
-  .d-n-md {
-    display: none; }
-  .d-b-md {
-    display: block; }
-  .d-i-md {
-    display: inline; }
-  .d-ib-md {
-    display: inline-block; }
-  .d-f-md {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .d-if-md {
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex; }
-  .ov-md {
-    overflow: hidden; }
-  .ov-v-md {
-    overflow: visible; }
-  .ov-h-md {
-    overflow: hidden; }
-  .ov-s-md {
-    overflow: scroll; }
-  .ov-a-md {
-    overflow: auto; }
-  .ovx-md {
-    overflow-x: hidden; }
-  .ovx-v-md {
-    overflow-x: visible; }
-  .ovx-h-md {
-    overflow-x: hidden; }
-  .ovx-s-md {
-    overflow-x: scroll; }
-  .ovx-a-md {
-    overflow-x: auto; }
-  .ovy-md {
-    overflow-y: hidden; }
-  .ovy-v-md {
-    overflow-y: visible; }
-  .ovy-h-md {
-    overflow-y: hidden; }
-  .ovy-s-md {
-    overflow-y: scroll; }
-  .ovy-a-md {
-    overflow-y: auto; }
-  .pos-s-md {
-    position: static; }
-  .pos-a-md {
-    position: absolute; }
-  .pos-r-md {
-    position: relative; }
-  .pos-f-md {
-    position: fixed; }
-  .v-v-md {
-    visibility: visible; }
-  .v-h-md {
-    visibility: hidden; }
-  .v-c-md {
-    visibility: collapse; } }
+    justify-content: space-evenly; } }
 
-@media screen and (min-width: 62em) {
+@media screen and (min-width: 62em) and (max-width: 74.999em) {
   .row {
     margin-left: -5px;
     margin-right: -5px; }
@@ -1737,7 +1484,7 @@ template {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
-  .fxw-c-lg {
+  .fxw-w-lg {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
@@ -1840,73 +1587,7 @@ template {
   .jc-se-lg {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; }
-  .fl-n-lg {
-    float: none; }
-  .fl-l-lg {
-    float: left; }
-  .fl-r-lg {
-    float: right; }
-  .d-n-lg {
-    display: none; }
-  .d-b-lg {
-    display: block; }
-  .d-i-lg {
-    display: inline; }
-  .d-ib-lg {
-    display: inline-block; }
-  .d-f-lg {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .d-if-lg {
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex; }
-  .ov-lg {
-    overflow: hidden; }
-  .ov-v-lg {
-    overflow: visible; }
-  .ov-h-lg {
-    overflow: hidden; }
-  .ov-s-lg {
-    overflow: scroll; }
-  .ov-a-lg {
-    overflow: auto; }
-  .ovx-lg {
-    overflow-x: hidden; }
-  .ovx-v-lg {
-    overflow-x: visible; }
-  .ovx-h-lg {
-    overflow-x: hidden; }
-  .ovx-s-lg {
-    overflow-x: scroll; }
-  .ovx-a-lg {
-    overflow-x: auto; }
-  .ovy-lg {
-    overflow-y: hidden; }
-  .ovy-v-lg {
-    overflow-y: visible; }
-  .ovy-h-lg {
-    overflow-y: hidden; }
-  .ovy-s-lg {
-    overflow-y: scroll; }
-  .ovy-a-lg {
-    overflow-y: auto; }
-  .pos-s-lg {
-    position: static; }
-  .pos-a-lg {
-    position: absolute; }
-  .pos-r-lg {
-    position: relative; }
-  .pos-f-lg {
-    position: fixed; }
-  .v-v-lg {
-    visibility: visible; }
-  .v-h-lg {
-    visibility: hidden; }
-  .v-c-lg {
-    visibility: collapse; } }
+    justify-content: space-evenly; } }
 
 @media screen and (min-width: 75em) {
   .row {
@@ -2089,7 +1770,7 @@ template {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
-  .fxw-c-xl {
+  .fxw-w-xl {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
@@ -2192,93 +1873,27 @@ template {
   .jc-se-xl {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; }
-  .fl-n-xl {
-    float: none; }
-  .fl-l-xl {
-    float: left; }
-  .fl-r-xl {
-    float: right; }
-  .d-n-xl {
-    display: none; }
-  .d-b-xl {
-    display: block; }
-  .d-i-xl {
-    display: inline; }
-  .d-ib-xl {
-    display: inline-block; }
-  .d-f-xl {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .d-if-xl {
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex; }
-  .ov-xl {
-    overflow: hidden; }
-  .ov-v-xl {
-    overflow: visible; }
-  .ov-h-xl {
-    overflow: hidden; }
-  .ov-s-xl {
-    overflow: scroll; }
-  .ov-a-xl {
-    overflow: auto; }
-  .ovx-xl {
-    overflow-x: hidden; }
-  .ovx-v-xl {
-    overflow-x: visible; }
-  .ovx-h-xl {
-    overflow-x: hidden; }
-  .ovx-s-xl {
-    overflow-x: scroll; }
-  .ovx-a-xl {
-    overflow-x: auto; }
-  .ovy-xl {
-    overflow-y: hidden; }
-  .ovy-v-xl {
-    overflow-y: visible; }
-  .ovy-h-xl {
-    overflow-y: hidden; }
-  .ovy-s-xl {
-    overflow-y: scroll; }
-  .ovy-a-xl {
-    overflow-y: auto; }
-  .pos-s-xl {
-    position: static; }
-  .pos-a-xl {
-    position: absolute; }
-  .pos-r-xl {
-    position: relative; }
-  .pos-f-xl {
-    position: fixed; }
-  .v-v-xl {
-    visibility: visible; }
-  .v-h-xl {
-    visibility: hidden; }
-  .v-c-xl {
-    visibility: collapse; } }
+    justify-content: space-evenly; } }
 
-@media (min-width: 36em) and (max-width: 47.999em) {
+@media screen and (min-width: 36em) and (max-width: 47.999em) {
   [hidden-sm], .hidden-sm {
     display: none !important; }
   [visible-sm], .visible-sm {
     display: inherit !important; } }
 
-@media (min-width: 48em) and (max-width: 61.999em) {
+@media screen and (min-width: 48em) and (max-width: 61.999em) {
   [hidden-md], .hidden-md {
     display: none !important; }
   [visible-md], .visible-md {
     display: inherit !important; } }
 
-@media (min-width: 62em) and (max-width: 74.999em) {
+@media screen and (min-width: 62em) and (max-width: 74.999em) {
   [hidden-lg], .hidden-lg {
     display: none !important; }
   [visible-lg], .visible-lg {
     display: inherit !important; } }
 
-@media (min-width: 75em) {
+@media screen and (min-width: 75em) {
   [hidden-xl], .hidden-xl {
     display: none !important; }
   [visible-xl], .visible-xl {

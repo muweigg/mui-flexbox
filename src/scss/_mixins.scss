@@ -337,22 +337,25 @@
 
 @mixin breakpoint-up ($breakpoint) {
   $breakpoint: get-breakpoint($breakpoint);
-  @media (min-width: $breakpoint) {
+  $queries: '#{$media-queries-prefix} (min-width: #{$breakpoint})';
+  @media #{$queries} {
     @content;
   }
 }
 
 @mixin breakpoint-down ($breakpoint) {
   $breakpoint: get-breakpoint($breakpoint);
-  @media (max-width: $breakpoint) {
+  $queries: '#{$media-queries-prefix} (max-width: #{$breakpoint})';
+  @media #{$queries} {
     @content;
   }
 }
 
 @mixin breakpoint-between ($begin, $end) {
   $begin: get-breakpoint($begin);
-  $end: get-breakpoint($end) - 0.001;
-  @media (min-width: $begin) and (max-width: $end) {
+  $end: get-breakpoint($end);
+  $queries: '#{$media-queries-prefix} (min-width: #{$begin}) and (max-width: #{$end})';
+  @media #{$queries} {
     @content;
   }
 }
@@ -382,16 +385,28 @@
   }
 }
 
-@mixin generate-visible-media-queries ($breakpoint: null) {
+@mixin generate-range-media-queries ($breakpoint: null) {
+  $minOf: str-index($media-queries-breakpoints, 'min-width');
+  $maxOf: str-index($media-queries-breakpoints, 'max-width');
   $keys: map-keys($breakpoints);
   $index: index($keys, $breakpoint);
-  $begin: get-breakpoint($breakpoint);
   $len: length($keys);
-  @if ($index == length($keys)) {
-    @include breakpoint-up($begin) { @content; }
+  @if ($minOf) {
+    $begin: get-breakpoint($breakpoint);
+    @if ($index == $len) {
+      @include breakpoint-up($begin) { @content; }
+    } @else {
+      $end: get-breakpoint(nth($keys, $index + 1));
+      @include breakpoint-between($begin, ($end - 0.001)) { @content; }
+    }
   } @else {
-    $end: get-breakpoint(nth($keys, $index + 1));
-    @include breakpoint-between($begin, $end) { @content; }
+    $end: get-breakpoint($breakpoint);
+    @if ($index == 1) {
+      @include breakpoint-down($end) { @content; }
+    } @else {
+      $begin: get-breakpoint(nth($keys, $index - 1));
+      @include breakpoint-between(($begin + 0.001), $end) { @content; }
+    }
   }
 }
 

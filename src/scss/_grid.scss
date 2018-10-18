@@ -20,7 +20,7 @@
 
 @if $responsive {
   @each $breakpoint, $width in $breakpoints {
-    @include generate-media-queries ($breakpoint) {
+    @include generate-range-media-queries ($breakpoint) {
       @include generate-gap($breakpoint);
       @include generate-columns($breakpoint);
       @if $emmet-align { @include generate-align($breakpoint); }
@@ -33,7 +33,7 @@
     }
   }
   @each $breakpoint, $width in $breakpoints {
-    @include generate-visible-media-queries ($breakpoint) {
+    @include generate-range-media-queries ($breakpoint) {
       @include generate-visible($breakpoint);
     }
   }

@@ -4,7 +4,8 @@ $class-selector: true !default;
 $attribute-selector: false !default;
 $column-offset: true !default;
 $justify: false !default;
-$emmet-align: false !default;
+// Please refer to https://docs.emmet.io/cheat-sheet/
+$emmet-align: true !default;
 $emmet-float: false !default;
 $emmet-cursor: false !default;
 $emmet-display: false !default;
@@ -12,8 +13,11 @@ $emmet-overflow: false !default;
 $emmet-position: false !default;
 $emmet-visibility: false !default;
 $responsive: true !default;
-$media-queries-placeholder: '{breakpoints}' !default;
-$media-queries: 'screen and (min-width: #{$media-queries-placeholder})' !default;
+$media-queries-prefix: 'screen and' !default;
+// If $media-range-queries is true, it will be invalid.
+$media-queries-breakpoints: 'min-width';
+// Output @media screen and (min-width: ??em) and (max-width: ??.999em).
+$media-range-queries: true !default;
 $breakpoints: (
   sm: 36em, // 576px
   md: 48em, // 768px
