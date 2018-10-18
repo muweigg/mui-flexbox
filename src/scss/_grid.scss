@@ -17,6 +17,7 @@
 @if $emmet-overflow { @include generate-overflow; }
 @if $emmet-position { @include generate-position; }
 @if $emmet-visibility { @include generate-visibility; }
+@if $emmet-writing-mode { @include generate-writing-mode; }
 
 @if $responsive {
   @each $breakpoint, $width in $breakpoints {
@@ -31,6 +32,7 @@
         @if $emmet-overflow { @include generate-overflow($breakpoint); }
         @if $emmet-position { @include generate-position($breakpoint); }
         @if $emmet-visibility { @include generate-visibility($breakpoint); }
+        @if $emmet-writing-mode { @include generate-writing-mode($breakpoint); }
       }
     } @else {
       @include generate-media-queries ($breakpoint) {
@@ -43,6 +45,7 @@
         @if $emmet-overflow { @include generate-overflow($breakpoint); }
         @if $emmet-position { @include generate-position($breakpoint); }
         @if $emmet-visibility { @include generate-visibility($breakpoint); }
+        @if $emmet-writing-mode { @include generate-writing-mode($breakpoint); }
       }
     }
   }

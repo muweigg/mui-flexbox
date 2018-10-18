@@ -335,6 +335,20 @@
   @include generate-selectors-by-map($classes, $breakpoint);
 }
 
+@mixin generate-writing-mode ($breakpoint: null) {
+
+  $classes: (
+    writing-mode: (
+      wm: lr-tb horizontal-tb,
+      wm-lrt: lr-tb horizontal-tb,
+      wm-tbl: tb-lr vertical-lr,
+      wm-thr: tb-rl vertical-rl,
+    )
+  );
+
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
 @mixin breakpoint-up ($breakpoint) {
   $breakpoint: get-breakpoint($breakpoint);
   $media-queries: '#{$media-queries-prefix} (min-width: #{$breakpoint})';

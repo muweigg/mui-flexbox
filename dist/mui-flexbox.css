@@ -731,6 +731,34 @@ template {
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly; }
 
+.wm {
+  -webkit-writing-mode: lr-tb;
+  -ms-writing-mode: lr-tb;
+  writing-mode: lr-tb;
+  -webkit-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb; }
+
+.wm-lrt {
+  -webkit-writing-mode: lr-tb;
+  -ms-writing-mode: lr-tb;
+  writing-mode: lr-tb;
+  -webkit-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb; }
+
+.wm-tbl {
+  -webkit-writing-mode: tb-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: tb-lr;
+  -webkit-writing-mode: vertical-lr;
+  writing-mode: vertical-lr; }
+
+.wm-thr {
+  -webkit-writing-mode: tb-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl; }
+
 @media screen and (min-width: 36em) {
   .row {
     margin-left: -5px;
@@ -1015,7 +1043,31 @@ template {
   .jc-se-sm {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; } }
+    justify-content: space-evenly; }
+  .wm-sm {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-lrt-sm {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-tbl-sm {
+    -webkit-writing-mode: tb-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: tb-lr;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr; }
+  .wm-thr-sm {
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl; } }
 
 @media screen and (min-width: 48em) {
   .row {
@@ -1301,7 +1353,31 @@ template {
   .jc-se-md {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; } }
+    justify-content: space-evenly; }
+  .wm-md {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-lrt-md {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-tbl-md {
+    -webkit-writing-mode: tb-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: tb-lr;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr; }
+  .wm-thr-md {
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl; } }
 
 @media screen and (min-width: 62em) {
   .row {
@@ -1587,7 +1663,31 @@ template {
   .jc-se-lg {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; } }
+    justify-content: space-evenly; }
+  .wm-lg {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-lrt-lg {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-tbl-lg {
+    -webkit-writing-mode: tb-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: tb-lr;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr; }
+  .wm-thr-lg {
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl; } }
 
 @media screen and (min-width: 75em) {
   .row {
@@ -1873,7 +1973,31 @@ template {
   .jc-se-xl {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly; } }
+    justify-content: space-evenly; }
+  .wm-xl {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-lrt-xl {
+    -webkit-writing-mode: lr-tb;
+    -ms-writing-mode: lr-tb;
+    writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb; }
+  .wm-tbl-xl {
+    -webkit-writing-mode: tb-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: tb-lr;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr; }
+  .wm-thr-xl {
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl; } }
 
 @media screen and (min-width: 36em) and (max-width: 47.999em) {
   [hidden-sm], .hidden-sm {
