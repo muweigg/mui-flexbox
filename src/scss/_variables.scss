@@ -17,7 +17,7 @@ $media-queries-prefix: 'screen and' !default;
 // If $media-range-queries is true, it will be invalid.
 $media-queries-breakpoints: 'min-width'; // min-width or max-width
 // Output @media screen and (min-width: ??em) and (max-width: ??.999em).
-$media-range-queries: true !default;
+$media-range-queries: false !default;
 $breakpoints: (
   sm: 36em, // 576px
   md: 48em, // 768px

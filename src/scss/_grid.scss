@@ -20,16 +20,30 @@
 
 @if $responsive {
   @each $breakpoint, $width in $breakpoints {
-    @include generate-range-media-queries ($breakpoint) {
-      @include generate-gap($breakpoint);
-      @include generate-columns($breakpoint);
-      @if $emmet-align { @include generate-align($breakpoint); }
-      @if $emmet-float { @include generate-float($breakpoint); }
-      // @if $emmet-cursor { @include generate-cursor($breakpoint); }
-      @if $emmet-display { @include generate-display($breakpoint); }
-      @if $emmet-overflow { @include generate-overflow($breakpoint); }
-      @if $emmet-position { @include generate-position($breakpoint); }
-      @if $emmet-visibility { @include generate-visibility($breakpoint); }
+    @if $media-range-queries {
+      @include generate-range-media-queries ($breakpoint) {
+        @include generate-gap($breakpoint);
+        @include generate-columns($breakpoint);
+        @if $emmet-align { @include generate-align($breakpoint); }
+        @if $emmet-float { @include generate-float($breakpoint); }
+        // @if $emmet-cursor { @include generate-cursor($breakpoint); }
+        @if $emmet-display { @include generate-display($breakpoint); }
+        @if $emmet-overflow { @include generate-overflow($breakpoint); }
+        @if $emmet-position { @include generate-position($breakpoint); }
+        @if $emmet-visibility { @include generate-visibility($breakpoint); }
+      }
+    } @else {
+      @include generate-media-queries ($breakpoint) {
+        @include generate-gap($breakpoint);
+        @include generate-columns($breakpoint);
+        @if $emmet-align { @include generate-align($breakpoint); }
+        @if $emmet-float { @include generate-float($breakpoint); }
+        // @if $emmet-cursor { @include generate-cursor($breakpoint); }
+        @if $emmet-display { @include generate-display($breakpoint); }
+        @if $emmet-overflow { @include generate-overflow($breakpoint); }
+        @if $emmet-position { @include generate-position($breakpoint); }
+        @if $emmet-visibility { @include generate-visibility($breakpoint); }
+      }
     }
   }
   @each $breakpoint, $width in $breakpoints {
