@@ -16,9 +16,9 @@ $emmet-writing-mode: false !default;
 $responsive: true !default;
 $media-queries-prefix: 'screen and' !default;
 $media-queries-placeholder: '{breakpoint}' !default;
-// If $media-range-queries is true, it will be invalid.
 $media-queries: '#{$media-queries-prefix} (min-width: #{$media-queries-placeholder})' !default;
-// Output @media screen and (min-width: ??em) and (max-width: ??.999em).
+// If $media-queries contains 'min-width', Output @media screen and (min-width: ??em) and (max-width: ??.999em).
+// If $media-queries contains 'max-width', Output @media screen and (min-width: ??.001em) and (max-width: ??em).
 $media-range-queries: false !default;
 $breakpoints: (
   sm: 36em, // 576px
