@@ -8,7 +8,6 @@
 @include generate-base;
 @include generate-gap;
 @include generate-columns;
-@include generate-visible;
 @if $justify { @include generate-justify; }
 @if $emmet-align { @include generate-align; }
 @if $emmet-float { @include generate-float; }
@@ -18,6 +17,7 @@
 @if $emmet-position { @include generate-position; }
 @if $emmet-visibility { @include generate-visibility; }
 @if $emmet-writing-mode { @include generate-writing-mode; }
+@include generate-visible;
 
 @if $responsive {
   @each $breakpoint, $width in $breakpoints {
