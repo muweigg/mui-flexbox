@@ -11,6 +11,7 @@
 @if $margin { @include generate-margin; }
 @if $padding { @include generate-padding; }
 @if $justify { @include generate-justify; }
+@if $emmet-flex { @include generate-flex; }
 @if $emmet-align { @include generate-align; }
 @if $emmet-float { @include generate-float; }
 @if $emmet-cursor { @include generate-cursor; }
@@ -29,6 +30,7 @@
         @include generate-columns($breakpoint);
         @if $margin { @include generate-margin($breakpoint); }
         @if $padding { @include generate-padding($breakpoint); }
+        @if $emmet-flex { @include generate-flex($breakpoint); }
         @if $emmet-align { @include generate-align($breakpoint); }
         @if $emmet-float { @include generate-float($breakpoint); }
         // @if $emmet-cursor { @include generate-cursor($breakpoint); }
@@ -45,6 +47,7 @@
         @include generate-columns($breakpoint);
         @if $margin { @include generate-margin($breakpoint); }
         @if $padding { @include generate-padding($breakpoint); }
+        @if $emmet-flex { @include generate-flex($breakpoint); }
         @if $emmet-align { @include generate-align($breakpoint); }
         @if $emmet-float { @include generate-float($breakpoint); }
         // @if $emmet-cursor { @include generate-cursor($breakpoint); }

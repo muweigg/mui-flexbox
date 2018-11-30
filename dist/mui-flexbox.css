@@ -726,44 +726,20 @@ template {
 .p-l-0 {
   padding-left: 0; }
 
-.ta-l {
-  text-align: left; }
+.d-f {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
-.ta-c {
-  text-align: center; }
+.d-if {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
 
-.ta-r {
-  text-align: right; }
-
-.ta-s {
-  text-align: start; }
-
-.ta-e {
-  text-align: end; }
-
-.va-t {
-  vertical-align: top; }
-
-.va-tt {
-  vertical-align: text-top; }
-
-.va-m {
-  vertical-align: middle; }
-
-.va-bl {
-  vertical-align: baseline; }
-
-.va-b {
-  vertical-align: bottom; }
-
-.va-tb {
-  vertical-align: text-bottom; }
-
-.va-sup {
-  vertical-align: super; }
-
-.va-sub {
-  vertical-align: sub; }
+.fx-auto-0 {
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0; }
 
 .fx-auto {
   -webkit-flex: 1 1 auto;
@@ -934,6 +910,45 @@ template {
   -webkit-justify-content: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly; }
+
+.ta-l {
+  text-align: left; }
+
+.ta-c {
+  text-align: center; }
+
+.ta-r {
+  text-align: right; }
+
+.ta-s {
+  text-align: start; }
+
+.ta-e {
+  text-align: end; }
+
+.va-t {
+  vertical-align: top; }
+
+.va-tt {
+  vertical-align: text-top; }
+
+.va-m {
+  vertical-align: middle; }
+
+.va-bl {
+  vertical-align: baseline; }
+
+.va-b {
+  vertical-align: bottom; }
+
+.va-tb {
+  vertical-align: text-bottom; }
+
+.va-sup {
+  vertical-align: super; }
+
+.va-sub {
+  vertical-align: sub; }
 
 [hidden], .hidden {
   display: none !important; }
@@ -1204,32 +1219,18 @@ template {
     padding-left: 30px; }
   .p-l-0-sm {
     padding-left: 0; }
-  .ta-l-sm {
-    text-align: left; }
-  .ta-c-sm {
-    text-align: center; }
-  .ta-r-sm {
-    text-align: right; }
-  .ta-s-sm {
-    text-align: start; }
-  .ta-e-sm {
-    text-align: end; }
-  .va-t-sm {
-    vertical-align: top; }
-  .va-tt-sm {
-    vertical-align: text-top; }
-  .va-m-sm {
-    vertical-align: middle; }
-  .va-bl-sm {
-    vertical-align: baseline; }
-  .va-b-sm {
-    vertical-align: bottom; }
-  .va-tb-sm {
-    vertical-align: text-bottom; }
-  .va-sup-sm {
-    vertical-align: super; }
-  .va-sub-sm {
-    vertical-align: sub; }
+  .d-f-sm {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .d-if-sm {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+  .fx-auto-0-sm {
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0; }
   .fx-auto-sm {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -1366,6 +1367,32 @@ template {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly; }
+  .ta-l-sm {
+    text-align: left; }
+  .ta-c-sm {
+    text-align: center; }
+  .ta-r-sm {
+    text-align: right; }
+  .ta-s-sm {
+    text-align: start; }
+  .ta-e-sm {
+    text-align: end; }
+  .va-t-sm {
+    vertical-align: top; }
+  .va-tt-sm {
+    vertical-align: text-top; }
+  .va-m-sm {
+    vertical-align: middle; }
+  .va-bl-sm {
+    vertical-align: baseline; }
+  .va-b-sm {
+    vertical-align: bottom; }
+  .va-tb-sm {
+    vertical-align: text-bottom; }
+  .va-sup-sm {
+    vertical-align: super; }
+  .va-sub-sm {
+    vertical-align: sub; }
   [hidden-sm], .hidden-sm {
     display: none !important; }
   [visible-sm], .visible-sm {
@@ -1634,32 +1661,18 @@ template {
     padding-left: 30px; }
   .p-l-0-md {
     padding-left: 0; }
-  .ta-l-md {
-    text-align: left; }
-  .ta-c-md {
-    text-align: center; }
-  .ta-r-md {
-    text-align: right; }
-  .ta-s-md {
-    text-align: start; }
-  .ta-e-md {
-    text-align: end; }
-  .va-t-md {
-    vertical-align: top; }
-  .va-tt-md {
-    vertical-align: text-top; }
-  .va-m-md {
-    vertical-align: middle; }
-  .va-bl-md {
-    vertical-align: baseline; }
-  .va-b-md {
-    vertical-align: bottom; }
-  .va-tb-md {
-    vertical-align: text-bottom; }
-  .va-sup-md {
-    vertical-align: super; }
-  .va-sub-md {
-    vertical-align: sub; }
+  .d-f-md {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .d-if-md {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+  .fx-auto-0-md {
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0; }
   .fx-auto-md {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -1796,6 +1809,32 @@ template {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly; }
+  .ta-l-md {
+    text-align: left; }
+  .ta-c-md {
+    text-align: center; }
+  .ta-r-md {
+    text-align: right; }
+  .ta-s-md {
+    text-align: start; }
+  .ta-e-md {
+    text-align: end; }
+  .va-t-md {
+    vertical-align: top; }
+  .va-tt-md {
+    vertical-align: text-top; }
+  .va-m-md {
+    vertical-align: middle; }
+  .va-bl-md {
+    vertical-align: baseline; }
+  .va-b-md {
+    vertical-align: bottom; }
+  .va-tb-md {
+    vertical-align: text-bottom; }
+  .va-sup-md {
+    vertical-align: super; }
+  .va-sub-md {
+    vertical-align: sub; }
   [hidden-md], .hidden-md {
     display: none !important; }
   [visible-md], .visible-md {
@@ -2064,32 +2103,18 @@ template {
     padding-left: 30px; }
   .p-l-0-lg {
     padding-left: 0; }
-  .ta-l-lg {
-    text-align: left; }
-  .ta-c-lg {
-    text-align: center; }
-  .ta-r-lg {
-    text-align: right; }
-  .ta-s-lg {
-    text-align: start; }
-  .ta-e-lg {
-    text-align: end; }
-  .va-t-lg {
-    vertical-align: top; }
-  .va-tt-lg {
-    vertical-align: text-top; }
-  .va-m-lg {
-    vertical-align: middle; }
-  .va-bl-lg {
-    vertical-align: baseline; }
-  .va-b-lg {
-    vertical-align: bottom; }
-  .va-tb-lg {
-    vertical-align: text-bottom; }
-  .va-sup-lg {
-    vertical-align: super; }
-  .va-sub-lg {
-    vertical-align: sub; }
+  .d-f-lg {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .d-if-lg {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+  .fx-auto-0-lg {
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0; }
   .fx-auto-lg {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -2226,6 +2251,32 @@ template {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly; }
+  .ta-l-lg {
+    text-align: left; }
+  .ta-c-lg {
+    text-align: center; }
+  .ta-r-lg {
+    text-align: right; }
+  .ta-s-lg {
+    text-align: start; }
+  .ta-e-lg {
+    text-align: end; }
+  .va-t-lg {
+    vertical-align: top; }
+  .va-tt-lg {
+    vertical-align: text-top; }
+  .va-m-lg {
+    vertical-align: middle; }
+  .va-bl-lg {
+    vertical-align: baseline; }
+  .va-b-lg {
+    vertical-align: bottom; }
+  .va-tb-lg {
+    vertical-align: text-bottom; }
+  .va-sup-lg {
+    vertical-align: super; }
+  .va-sub-lg {
+    vertical-align: sub; }
   [hidden-lg], .hidden-lg {
     display: none !important; }
   [visible-lg], .visible-lg {
@@ -2494,32 +2545,18 @@ template {
     padding-left: 30px; }
   .p-l-0-xl {
     padding-left: 0; }
-  .ta-l-xl {
-    text-align: left; }
-  .ta-c-xl {
-    text-align: center; }
-  .ta-r-xl {
-    text-align: right; }
-  .ta-s-xl {
-    text-align: start; }
-  .ta-e-xl {
-    text-align: end; }
-  .va-t-xl {
-    vertical-align: top; }
-  .va-tt-xl {
-    vertical-align: text-top; }
-  .va-m-xl {
-    vertical-align: middle; }
-  .va-bl-xl {
-    vertical-align: baseline; }
-  .va-b-xl {
-    vertical-align: bottom; }
-  .va-tb-xl {
-    vertical-align: text-bottom; }
-  .va-sup-xl {
-    vertical-align: super; }
-  .va-sub-xl {
-    vertical-align: sub; }
+  .d-f-xl {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .d-if-xl {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+  .fx-auto-0-xl {
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0; }
   .fx-auto-xl {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -2656,6 +2693,32 @@ template {
     -webkit-justify-content: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly; }
+  .ta-l-xl {
+    text-align: left; }
+  .ta-c-xl {
+    text-align: center; }
+  .ta-r-xl {
+    text-align: right; }
+  .ta-s-xl {
+    text-align: start; }
+  .ta-e-xl {
+    text-align: end; }
+  .va-t-xl {
+    vertical-align: top; }
+  .va-tt-xl {
+    vertical-align: text-top; }
+  .va-m-xl {
+    vertical-align: middle; }
+  .va-bl-xl {
+    vertical-align: baseline; }
+  .va-b-xl {
+    vertical-align: bottom; }
+  .va-tb-xl {
+    vertical-align: text-bottom; }
+  .va-sup-xl {
+    vertical-align: super; }
+  .va-sub-xl {
+    vertical-align: sub; }
   [hidden-xl], .hidden-xl {
     display: none !important; }
   [visible-xl], .visible-xl {

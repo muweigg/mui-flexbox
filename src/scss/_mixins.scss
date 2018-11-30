@@ -224,40 +224,22 @@
   }
 }
 
-@mixin generate-align ($breakpoint: null) {
+@mixin generate-flex ($breakpoint: null) {
 
-  $text-align: (
-    text-align: (
-      ta-l: left,
-      ta-c: center,
-      ta-r: right,
-      ta-s: start,
-      ta-e: end
-    )
-  );
-
-  $vertical-align: (
-    vertical-align: (
-      va-t  : top,
-      va-tt : text-top,
-      va-m  : middle,
-      va-bl : baseline,
-      va-b  : bottom,
-      va-tb : text-bottom,
-      va-sup: super,
-      va-sub: sub
-    )
-  );
-
-  $flex-align: ();
+  $classes: ();
 
   @if not($float-layout) {
-    $flex-align: (
+    $classes: (
+      display: (
+        d-f : flex,
+        d-if: inline-flex
+      ),
       flex: (
-        fx-auto: '1 1 auto',
-        fx-g   : '1 0 auto',
-        fx-s   : '0 1 auto',
-        fx-none: '0 0 auto',
+        fx-auto-0: '1 1 0',
+        fx-auto  : '1 1 auto',
+        fx-g     : '1 0 auto',
+        fx-s     : '0 1 auto',
+        fx-none  : '0 0 auto',
       ),
       flex-direction: (
         fxd-c : column,
@@ -304,8 +286,35 @@
     );
   }
 
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
+@mixin generate-align ($breakpoint: null) {
+
+  $text-align: (
+    text-align: (
+      ta-l: left,
+      ta-c: center,
+      ta-r: right,
+      ta-s: start,
+      ta-e: end
+    )
+  );
+
+  $vertical-align: (
+    vertical-align: (
+      va-t  : top,
+      va-tt : text-top,
+      va-m  : middle,
+      va-bl : baseline,
+      va-b  : bottom,
+      va-tb : text-bottom,
+      va-sup: super,
+      va-sub: sub
+    )
+  );
+
   $classes: map-merge($text-align , $vertical-align);
-  $classes: map-merge($classes , $flex-align);
   @include generate-selectors-by-map($classes, $breakpoint);
 }
 
@@ -344,19 +353,22 @@
 
   $classes: (
     display: (
-      d-n : none,
-      d-b : block,
-      d-i : inline,
-      d-ib: inline-block,
+      d-n    : none,
+      d-b    : block,
+      d-i    : inline,
+      d-ib   : inline-block,
+      d-tb   : table,
+      d-itb  : inline-table,
+      d-tbcp : table-caption,
+      d-tbcl : table-column,
+      d-tbclg: table-column-group,
+      d-tbhg : table-header-group,
+      d-tbfg : table-footer-group,
+      d-tbr  : table-row,
+      d-tbrg : table-row-group,
+      d-tbc  : table-cell
     )
   );
-
-  @if not($float-layout) {
-    $display-map: map-get($classes, display);
-    $display-map: map-set($display-map, d-f, flex);
-    $display-map: map-set($display-map, d-if, inline-flex);
-    $classes: map-set($classes, display, $display-map);
-  }
 
   @include generate-selectors-by-map($classes, $breakpoint);
 }
