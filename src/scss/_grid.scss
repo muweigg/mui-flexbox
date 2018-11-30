@@ -8,6 +8,8 @@
 @include generate-base;
 @include generate-gap;
 @include generate-columns;
+@if $margin { @include generate-margin; }
+@if $padding { @include generate-padding; }
 @if $justify { @include generate-justify; }
 @if $emmet-align { @include generate-align; }
 @if $emmet-float { @include generate-float; }
@@ -25,6 +27,8 @@
       @include generate-range-media-queries ($breakpoint) {
         @include generate-gap($breakpoint);
         @include generate-columns($breakpoint);
+        @if $margin { @include generate-margin($breakpoint); }
+        @if $padding { @include generate-padding($breakpoint); }
         @if $emmet-align { @include generate-align($breakpoint); }
         @if $emmet-float { @include generate-float($breakpoint); }
         // @if $emmet-cursor { @include generate-cursor($breakpoint); }
@@ -33,11 +37,14 @@
         @if $emmet-position { @include generate-position($breakpoint); }
         @if $emmet-visibility { @include generate-visibility($breakpoint); }
         @if $emmet-writing-mode { @include generate-writing-mode($breakpoint); }
+        @include generate-visible($breakpoint);
       }
     } @else {
       @include generate-media-queries ($breakpoint) {
         @include generate-gap($breakpoint);
         @include generate-columns($breakpoint);
+        @if $margin { @include generate-margin($breakpoint); }
+        @if $padding { @include generate-padding($breakpoint); }
         @if $emmet-align { @include generate-align($breakpoint); }
         @if $emmet-float { @include generate-float($breakpoint); }
         // @if $emmet-cursor { @include generate-cursor($breakpoint); }
@@ -46,12 +53,13 @@
         @if $emmet-position { @include generate-position($breakpoint); }
         @if $emmet-visibility { @include generate-visibility($breakpoint); }
         @if $emmet-writing-mode { @include generate-writing-mode($breakpoint); }
+        @include generate-visible($breakpoint);
       }
     }
   }
-  @each $breakpoint, $width in $breakpoints {
+  /*@each $breakpoint, $width in $breakpoints {
     @include generate-range-media-queries ($breakpoint) {
       @include generate-visible($breakpoint);
     }
-  }
+  }*/
 }

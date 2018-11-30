@@ -5,6 +5,10 @@
   @return map-merge($map, $new);
 }
 
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
 @function update-list-in-map ($map, $key, $value) {
   $list: append(map-get($map, $key), $value);
   @return map-set($map, $key, $list);

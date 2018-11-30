@@ -3,6 +3,8 @@ $prefix: 'col-' !default;
 $class-selector: true !default;
 $attribute-selector: false !default;
 $column-offset: true !default;
+$margin: 5px 6 !default; // (increment value, increment number) or false
+$padding: 5px 6 !default; // (increment value, increment number) or false
 $justify: false !default;
 // Please refer to https://docs.emmet.io/cheat-sheet/
 $emmet-align: true !default;

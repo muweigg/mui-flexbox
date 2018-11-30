@@ -24,6 +24,88 @@
   }
 }
 
+@mixin generate-margin ($breakpoint: null) {
+
+  $initial: 0;
+  $increment: nth($margin, 1);
+  $times: nth($margin, 2);
+  $value: 0;
+
+  $m: ();
+  $m-top: ();
+  $m-right: ();
+  $m-bottom: ();
+  $m-left: ();
+
+  @for $i from 1 through $times {
+    $value: $value + $increment;
+    $num: strip-units($value);
+
+    $m-top: map-set($m-top, m-t-#{$num}, $value);
+    $m-right: map-set($m-right, m-r-#{$num}, $value);
+    $m-bottom: map-set($m-bottom, m-b-#{$num}, $value);
+    $m-left: map-set($m-left, m-l-#{$num}, $value);
+    $m: map-set($m, m-#{$num}, $value);
+  }
+
+  $m-top: map-set($m-top, m-t-0, $initial);
+  $m-right: map-set($m-right, m-r-0, $initial);
+  $m-bottom: map-set($m-bottom, m-b-0, $initial);
+  $m-left: map-set($m-left, m-l-0, $initial);
+  $m: map-set($m, m-0, $initial);
+
+  $classes: (
+    margin: $m,
+    margin-top: $m-top,
+    margin-right: $m-right,
+    margin-bottom: $m-bottom,
+    margin-left: $m-left
+  );
+
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
+@mixin generate-padding ($breakpoint: null) {
+
+  $initial: 0;
+  $increment: nth($padding, 1);
+  $times: nth($padding, 2);
+  $value: 0;
+
+  $p: ();
+  $p-top: ();
+  $p-right: ();
+  $p-bottom: ();
+  $p-left: ();
+
+  @for $i from 1 through $times {
+    $value: $value + $increment;
+    $num: strip-units($value);
+
+    $p-top: map-set($p-top, p-t-#{$num}, $value);
+    $p-right: map-set($p-right, p-r-#{$num}, $value);
+    $p-bottom: map-set($p-bottom, p-b-#{$num}, $value);
+    $p-left: map-set($p-left, p-l-#{$num}, $value);
+    $p: map-set($p, p-#{$num}, $value);
+  }
+
+  $p-top: map-set($p-top, p-t-0, $initial);
+  $p-right: map-set($p-right, p-r-0, $initial);
+  $p-bottom: map-set($p-bottom, p-b-0, $initial);
+  $p-left: map-set($p-left, p-l-0, $initial);
+  $p: map-set($p, p-0, $initial);
+
+  $classes: (
+    padding: $p,
+    padding-top: $p-top,
+    padding-right: $p-right,
+    padding-bottom: $p-bottom,
+    padding-left: $p-left
+  );
+
+  @include generate-selectors-by-map($classes, $breakpoint);
+}
+
 @mixin generate-justify () {
 
   #{get-selectors-by-name(ta-j)} {
